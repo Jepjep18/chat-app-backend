@@ -182,3 +182,4 @@ C:\Users\JBARNADO\Desktop\ChatApp\ChatAppBackend\bin\Debug\net8.0\Microsoft.Bcl.
 C:\Users\JBARNADO\Desktop\ChatApp\ChatAppBackend\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
 C:\Users\JBARNADO\Desktop\ChatApp\ChatAppBackend\bin\Debug\net8.0\System.Net.ServerSentEvents.dll
 C:\Users\JBARNADO\Desktop\ChatApp\ChatAppBackend\bin\Debug\net8.0\System.Threading.Channels.dll
+C:\Users\JBARNADO\Desktop\ChatApp\ChatAppBackend\obj\Debug\net8.0\ChatAppBackend.sourcelink.json

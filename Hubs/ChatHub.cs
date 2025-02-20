@@ -1,7 +1,6 @@
 ﻿using ChatAppBackend.Data;
 using ChatAppBackend.Models;
 using Microsoft.AspNetCore.SignalR;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Concurrent;
 
 namespace ChatAppBackend.Hubs
@@ -9,44 +8,83 @@ namespace ChatAppBackend.Hubs
     public class ChatHub : Hub
     {
         private readonly ApplicationDbContext _context;
-        private static ConcurrentDictionary<string, string> ConnectedUsers = new(); // Track connected users
-        private static ConcurrentQueue<string> WaitingUsers = new(); // Users waiting for a match
-        private static ConcurrentDictionary<string, string> ActiveChats = new(); // Store chat pairs
+
+        private static ConcurrentDictionary<string, (string UserId, List<string> Interests)> ConnectedUsers = new();
+        private static ConcurrentQueue<(string UserId, string ConnectionId, List<string> Interests)> WaitingUsers = new();
+        private static ConcurrentDictionary<string, string> ActiveChats = new();
 
         public ChatHub(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task Connect(string userId)
+        public async Task ConnectWithInterests(string userId, List<string>? interests)
         {
-            ConnectedUsers[Context.ConnectionId] = userId;
-
-            // Check if someone is already waiting
-            if (WaitingUsers.TryDequeue(out string? otherUserId))
+            if (string.IsNullOrEmpty(userId))
             {
-                // Pair users
-                ActiveChats[userId] = otherUserId;
-                ActiveChats[otherUserId] = userId;
+                throw new HubException("Invalid user ID.");
+            }
 
-                // Notify both users they are matched
-                await Clients.Client(Context.ConnectionId).SendAsync("Matched", otherUserId);
-                await Clients.Client(ConnectedUsers.FirstOrDefault(u => u.Value == otherUserId).Key)
-                    .SendAsync("Matched", userId);
+            interests ??= new List<string>();
+            ConnectedUsers[Context.ConnectionId] = (userId, interests);
+            Console.WriteLine($"User {userId} connected with interests: {(interests.Any() ? string.Join(", ", interests) : "No Interests")}");
+
+            (string UserId, string ConnectionId, List<string> Interests) matchedUser = default;
+            bool foundMatch = false;
+
+            lock (WaitingUsers)
+            {
+                foreach (var user in WaitingUsers)
+                {
+                    if (user.Interests.Any() && interests.Any() && user.Interests.Any(i => interests.Contains(i)))
+                    {
+                        matchedUser = user;
+                        foundMatch = true;
+                        break;
+                    }
+                    else if (!user.Interests.Any() && !interests.Any())
+                    {
+                        matchedUser = user;
+                        foundMatch = true;
+                        break;
+                    }
+                }
+
+                if (foundMatch)
+                {
+                    var tempQueue = new ConcurrentQueue<(string, string, List<string>)>(WaitingUsers.Where(w => w.UserId != matchedUser.UserId));
+                    Interlocked.Exchange(ref WaitingUsers, tempQueue);
+                }
+            }
+
+            if (foundMatch && !string.IsNullOrEmpty(matchedUser.ConnectionId))
+            {
+                ActiveChats[userId] = matchedUser.UserId;
+                ActiveChats[matchedUser.UserId] = userId;
+
+                await Clients.Client(Context.ConnectionId).SendAsync("Matched", matchedUser.UserId);
+                await Clients.Client(matchedUser.ConnectionId).SendAsync("Matched", userId);
+
+                Console.WriteLine($"Matched {userId} with {matchedUser.UserId}");
             }
             else
             {
-                // If no one is waiting, add to queue
-                WaitingUsers.Enqueue(userId);
+                WaitingUsers.Enqueue((userId, Context.ConnectionId, interests));
+                Console.WriteLine($"No match found for {userId}. Added to waiting queue.");
             }
         }
 
         public async Task SendMessage(string senderId, string content)
         {
+            if (string.IsNullOrEmpty(senderId) || string.IsNullOrEmpty(content))
+            {
+                await Clients.Caller.SendAsync("Error", "Invalid sender ID or empty message.");
+                return;
+            }
+
             if (!ActiveChats.TryGetValue(senderId, out string receiverId))
             {
-                // Instead of silently returning, notify the sender
-                await Clients.Caller.SendAsync("Error", "Cannot send message - no active chat found");
+                await Clients.Caller.SendAsync("Error", "Cannot send message - no active chat found.");
                 return;
             }
 
@@ -61,29 +99,38 @@ namespace ChatAppBackend.Hubs
             _context.Messages.Add(message);
             await _context.SaveChangesAsync();
 
-            // Send to both users
-            await Clients.Client(ConnectedUsers.First(u => u.Value == receiverId).Key)
-                .SendAsync("ReceiveMessage", senderId, content, message.SentAt);
-            await Clients.Client(Context.ConnectionId)
-                .SendAsync("ReceiveMessage", senderId, content, message.SentAt);
+            string receiverConnId = ConnectedUsers.FirstOrDefault(u => u.Value.UserId == receiverId).Key;
+
+            if (!string.IsNullOrEmpty(receiverConnId))
+            {
+                await Clients.Client(receiverConnId).SendAsync("ReceiveMessage", senderId, content, message.SentAt);
+            }
+
+            await Clients.Caller.SendAsync("ReceiveMessage", senderId, content, message.SentAt);
         }
 
         public async Task Disconnect()
         {
-            if (ConnectedUsers.TryRemove(Context.ConnectionId, out string? userId))
-            {
-                // Remove from waiting queue
-                var newQueue = new ConcurrentQueue<string>(WaitingUsers.Where(u => u != userId));
-                WaitingUsers = newQueue;
+            if (!ConnectedUsers.TryRemove(Context.ConnectionId, out var userData))
+                return;
 
-                // Remove active chat
-                if (ActiveChats.TryRemove(userId, out string? otherUserId))
+            string userId = userData.UserId;
+
+            var tempQueue = new ConcurrentQueue<(string, string, List<string>)>(WaitingUsers.Where(u => u.UserId != userId));
+            Interlocked.Exchange(ref WaitingUsers, tempQueue);
+
+            if (ActiveChats.TryRemove(userId, out string partnerId))
+            {
+                ActiveChats.TryRemove(partnerId, out _);
+
+                string partnerConnId = ConnectedUsers.FirstOrDefault(u => u.Value.UserId == partnerId).Key;
+                if (!string.IsNullOrEmpty(partnerConnId))
                 {
-                    ActiveChats.TryRemove(otherUserId, out _);
-                    await Clients.Client(ConnectedUsers.FirstOrDefault(u => u.Value == otherUserId).Key)
-                        .SendAsync("PartnerDisconnected");
+                    await Clients.Client(partnerConnId).SendAsync("PartnerDisconnected");
+                    Console.WriteLine($"User {userId} disconnected. Notifying {partnerId}.");
                 }
             }
+            Console.WriteLine($"User {userId} disconnected.");
         }
 
         public override async Task OnDisconnectedAsync(Exception? exception)
