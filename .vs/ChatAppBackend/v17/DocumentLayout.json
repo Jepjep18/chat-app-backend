@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\dtos\\messagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:dtos\\messagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\migrations\\20250219073405_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:migrations\\20250219073405_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MessageDto.cs",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\DTOs\\MessageDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\MessageDto.cs",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\DTOs\\MessageDto.cs",
+              "RelativeToolTip": "DTOs\\MessageDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:55:55.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20250219073405_initial.cs",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Migrations\\20250219073405_initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250219073405_initial.cs",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Migrations\\20250219073405_initial.cs",
+              "RelativeToolTip": "Migrations\\20250219073405_initial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:34:05.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "Controllers\\MessagesController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAA9wDMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:31:15.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Hubs\\ChatHub.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowDIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:30:31.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAcwDMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:28:58.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-19T07:28:34.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:28:10.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Models\\Message.cs",
+              "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Models\\Message.cs",
+              "RelativeToolTip": "Models\\Message.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:27:42.02Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
