@@ -147,6 +147,37 @@ namespace ChatAppBackend.Hubs
         }
 
 
+        public async Task StartTyping(string senderId)
+        {
+            if (!ActiveChats.TryGetValue(senderId, out string receiverId))
+                return;
+
+            string? receiverConnId = GetConnectionId(receiverId);
+            if (!string.IsNullOrEmpty(receiverConnId))
+            {
+                await Clients.Client(receiverConnId).SendAsync("UserTyping", senderId);
+            }
+        }
+
+        public async Task StopTyping(string senderId)
+        {
+            if (!ActiveChats.TryGetValue(senderId, out string receiverId))
+                return;
+
+            string? receiverConnId = GetConnectionId(receiverId);
+            if (!string.IsNullOrEmpty(receiverConnId))
+            {
+                await Clients.Client(receiverConnId).SendAsync("UserStoppedTyping", senderId);
+            }
+        }
+
+        private string? GetConnectionId(string userId)
+        {
+            return ConnectedUsers.FirstOrDefault(u => u.Value.UserId == userId).Key;
+        }
+
+
+
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
             await Disconnect();
