@@ -177,6 +177,25 @@ namespace ChatAppBackend.Hubs
         }
 
 
+        public async Task MarkMessageAsRead(string messageId, string senderId)
+        {
+            Console.WriteLine($"📩 Message {messageId} read by {Context.ConnectionId}");
+
+            // Notify the sender that their message has been read
+            string? senderConnectionId = GetConnectionId(senderId);
+
+            if (!string.IsNullOrEmpty(senderConnectionId))
+            {
+                await Clients.Client(senderConnectionId).SendAsync("MessageRead", messageId);
+                Console.WriteLine($"✅ Read receipt sent for message ID: {messageId} to sender: {senderId}");
+            }
+            else
+            {
+                Console.WriteLine($"⚠️ Sender {senderId} not found in active connections.");
+            }
+        }
+
+
 
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
