@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,14 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|solutionrelative:controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3108BDB-6DC6-4655-A4C1-367A80F81300}|ChatAppBackend.csproj|c:\\users\\jbarnado\\desktop\\chatapp\\chatappbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -46,7 +46,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "MessageDto.cs",
               "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\DTOs\\MessageDto.cs",
               "RelativeDocumentMoniker": "DTOs\\MessageDto.cs",
@@ -70,13 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "MessagesController.cs",
               "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Controllers\\MessagesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
               "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Controllers\\MessagesController.cs",
               "RelativeToolTip": "Controllers\\MessagesController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAA9wDMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-19T07:31:15.842Z"
             },
@@ -88,22 +88,23 @@
               "RelativeDocumentMoniker": "Hubs\\ChatHub.cs",
               "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Hubs\\ChatHub.cs",
               "RelativeToolTip": "Hubs\\ChatHub.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAUwGwAAABNAAAA",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAgwJMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-19T07:30:31.535Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAcwDMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwCAAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T07:28:58.585Z"
+              "WhenOpened": "2025-02-19T07:28:58.585Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -119,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -131,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Message.cs",
               "DocumentMoniker": "C:\\Users\\JBARNADO\\Desktop\\ChatApp\\ChatAppBackend\\Models\\Message.cs",
               "RelativeDocumentMoniker": "Models\\Message.cs",
@@ -139,8 +140,7 @@
               "RelativeToolTip": "Models\\Message.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T07:27:42.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T07:27:42.02Z"
             }
           ]
         }

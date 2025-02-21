@@ -133,6 +133,20 @@ namespace ChatAppBackend.Hubs
             Console.WriteLine($"User {userId} disconnected.");
         }
 
+        public List<string> GetMatchedUserInterests()
+        {
+            if (ConnectedUsers.TryGetValue(Context.ConnectionId, out var userData))
+            {
+                if (ActiveChats.TryGetValue(userData.UserId, out string matchedUserId))
+                {
+                    var matchedUser = ConnectedUsers.Values.FirstOrDefault(u => u.UserId == matchedUserId);
+                    return matchedUser.Interests ?? new List<string>();
+                }
+            }
+            return new List<string>();
+        }
+
+
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
             await Disconnect();
